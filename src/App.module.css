@@ -1,0 +1,28 @@
+.App {
+  margin: 4rem 5rem;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  margin-bottom: 45px;
+  margin-right: 80px;
+}
+
+span {
+  inline-size: max-content;
+  margin-bottom: 12px;
+  font-size: 12px;
+  height: 18px;
+}
