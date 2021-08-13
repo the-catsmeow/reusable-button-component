@@ -2,10 +2,13 @@ import React from 'react';
 import Button from './button/button';
 
 import classes from './App.module.css';
+import ButtonPicker from './button-picker/button-picker';
 
 function App() {
   return (
     <div className={classes.App}>
+      <h1>Pick a Button</h1>
+      <ButtonPicker />
       <h1>Buttons</h1>
       <div className={classes.row}>
         <div className={classes.column}>
@@ -20,11 +23,12 @@ function App() {
       <div className={classes.row}>
         <div className={classes.column}>
           <span>{'<Button variant="outline" />'}</span>
-          <Button variant="outline" />
+          <Button color="primary" variant="outline" />
         </div>
         <div className={classes.column}>
           <span>{'&:hover, &:focus'}</span>
           <Button
+            color="primary"
             variant="outline"
             customStyles={{ backgroundColor: 'rgba(41, 98, 255, 0.1)' }}
           />
@@ -33,11 +37,12 @@ function App() {
       <div className={classes.row}>
         <div className={classes.column}>
           <span>{'<Button variant="text" />'}</span>
-          <Button variant="text" />
+          <Button color="primary" variant="text" />
         </div>
         <div className={classes.column}>
           <span>{'&:hover, &:focus'}</span>
           <Button
+            color="primary"
             variant="text"
             customStyles={{ backgroundColor: 'rgba(41, 98, 255, 0.1)' }}
           />

@@ -13,6 +13,8 @@
   transform: scale(1);
 }
 
+/* Color styles */
+
 .default {
   background: #e0e0e0;
   color: #3f3f3f;
@@ -63,9 +65,14 @@
 
 .default:active,
 .outline:active,
-text:active {
+text:active,
+.primary:active,
+.secondary:active,
+.danger:active {
   transform: scale(1.05);
 }
+
+/* Variant styles */
 
 .text {
   background: transparent;
@@ -76,6 +83,53 @@ text:active {
 .text:hover,
 .text:focus {
   background: rgba(41, 98, 255, 0.1);
+}
+
+.text.default {
+  color: #3f3f3f;
+}
+
+.text.primary {
+  color: #3d5afe;
+}
+
+.text.secondary {
+  color: #455a64;
+}
+
+.text.danger {
+  color: #d32f2f;
+}
+
+.outline {
+  background: #fff;
+}
+
+.outline.default {
+  border: 1px solid #3f3f3f;
+  color: #3f3f3f;
+}
+
+.outline.primary {
+  border: 1px solid #3d5afe;
+  color: #3d5afe;
+}
+
+.outline.secondary {
+  border: 1px solid #455a64;
+  color: #455a64;
+}
+
+.outline.danger {
+  border: 1px solid #d32f2f;
+  color: #d32f2f;
+}
+
+.outline:hover,
+.outline:active,
+.outline:focus {
+  background: rgba(41, 98, 255, 0.1);
+  border: 1px solid #3d5afe;
 }
 
 .text:disabled,
@@ -97,31 +151,21 @@ text:active {
   background-color: white;
 }
 
-.outline {
-  color: #3d5afe;
-  border: 1px solid #3d5afe;
-  background: #fff;
-}
-
 .outline:disabled {
   border-color: #9e9e9e;
-}
-
-.outline:hover,
-.outline:active,
-.outline:focus,
-.outlineHoverDemo {
-  background: rgba(41, 98, 255, 0.1);
-  border: 1px solid #3d5afe;
 }
 
 .outline:hover:disabled {
   background: #fff;
 }
 
+/* Disable shadow */
+
 .disableShadow {
   box-shadow: none;
 }
+
+/* Size styles */
 
 .small {
   padding: 6px 12px;
