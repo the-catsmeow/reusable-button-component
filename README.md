@@ -1,6 +1,6 @@
 # Reusable Button Component Challenge
 
-Completed for a DevChallenges.io front end challenge
+Completed for a DevChallenges.io front end challenge \
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
