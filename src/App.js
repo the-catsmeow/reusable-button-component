@@ -142,7 +142,7 @@ function App() {
           <span className={classes.description}></span>
           <Button
             color="secondary"
-            customStyles={{ backgroundColor: '#455A64' }}
+            customStyles={{ backgroundColor: '#1c313a' }}
           />
         </div>
         <div className={classes.column}>

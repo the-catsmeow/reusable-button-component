@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import Button from '../button/button';
 
-const ButtonPicker = (props) => {
+import classes from './button-picker.module.css';
+
+const ButtonPicker = () => {
   const [buttonProps, setbuttonProps] = useState({
     color: 'default',
     size: 'md',
     variant: 'default',
     disableShadow: false,
     disabled: false,
+    includeIcon: false,
     startIcon: '',
     endIcon: '',
   });
 
   const onChangeHandler = (e, buttonValue) => {
     let updatedButtonProps = { ...buttonProps };
-    if (buttonValue === 'disableShadow' || buttonValue === 'disabled') {
+    if (
+      buttonValue === 'disableShadow' ||
+      buttonValue === 'disabled' ||
+      buttonValue === 'includeIcon'
+    ) {
       updatedButtonProps = {
         ...updatedButtonProps,
         [buttonValue]: !updatedButtonProps[buttonValue],
@@ -34,10 +41,10 @@ const ButtonPicker = (props) => {
   return (
     <div>
       <form>
-        <div>
+        <div className={classes.selectionRow}>
           <h3>Color</h3>
-          <div>
-            <div>
+          <div className={classes.radioButtonGroup}>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="default"
@@ -48,7 +55,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="default">Default</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="primary"
@@ -59,7 +66,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="primary">Primary</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="secondary"
@@ -70,7 +77,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="secondary">Secondary</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="danger"
@@ -83,10 +90,10 @@ const ButtonPicker = (props) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className={classes.selectionRow}>
           <h3>Size</h3>
-          <div>
-            <div>
+          <div className={classes.radioButtonGroup}>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="sm"
@@ -97,7 +104,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="sm">Small</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="md"
@@ -108,7 +115,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="md">Medium</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="lg"
@@ -121,22 +128,21 @@ const ButtonPicker = (props) => {
             </div>
           </div>
         </div>
-
-        <div>
+        <div className={classes.selectionRow}>
           <h3>Variant</h3>
-          <div>
-            <div>
+          <div className={classes.radioButtonGroup}>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
-                id="default"
+                id="variant-default"
                 name="variant"
                 value="default"
                 checked={buttonProps.variant === 'default'}
                 onChange={(e) => onChangeHandler(e, 'variant')}
               />
-              <label htmlFor="default">Default</label>
+              <label htmlFor="variant-default">Default</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="outline"
@@ -147,7 +153,7 @@ const ButtonPicker = (props) => {
               />
               <label htmlFor="outline">Outline</label>
             </div>
-            <div>
+            <div className={classes.radioButton}>
               <input
                 type="radio"
                 id="text"
@@ -161,62 +167,93 @@ const ButtonPicker = (props) => {
           </div>
         </div>
         <div>
-          <div>
+          <div className={classes.checkboxContainer}>
             <input
+              className={classes.checkbox}
               type="checkbox"
               id="disableShadow"
               name="disableShadow"
               checked={buttonProps.disableShadow}
               onChange={(e) => onChangeHandler(e, 'disableShadow')}
             />
-            <label htmlFor="disableShadow">Disable Shadow</label>
+            <label htmlFor="disableShadow" className={classes.label}>
+              <div className={classes.ball}></div>
+            </label>
+            <span>Disable Shadow</span>
           </div>
         </div>
         <div>
-          <div>
+          <div className={classes.checkboxContainer}>
             <input
+              className={classes.checkbox}
               type="checkbox"
               id="disabled"
               name="disabled"
               checked={buttonProps.disabled}
               onChange={(e) => onChangeHandler(e, 'disabled')}
             />
-            <label htmlFor="disabled">Disabled</label>
+            <label htmlFor="disabled" className={classes.label}>
+              <div className={classes.ball}></div>
+            </label>
+            <span>Disable Button</span>
           </div>
         </div>
         <div>
-          <h3>Icons</h3>
-          <div>
-            <div>
-              <label htmlFor="startIcon">Start Icon </label>
-              <input
-                type="text"
-                id="startIcon"
-                onChange={(e) => onChangeHandler(e, 'startIcon')}
-              ></input>
-            </div>
-          </div>
-          <div>
-            <div>
-              <label htmlFor="endIcon">End Icon </label>
-              <input
-                type="text"
-                id="endIcon"
-                onChange={(e) => onChangeHandler(e, 'endIcon')}
-              ></input>
-            </div>
+          <div className={classes.checkboxContainer}>
+            <input
+              className={classes.checkbox}
+              type="checkbox"
+              id="icon-checkbox"
+              name="icon-checkbox"
+              checked={buttonProps.includeIcon}
+              onChange={(e) => onChangeHandler(e, 'includeIcon')}
+            />
+            <label htmlFor="icon-checkbox" className={classes.label}>
+              <div className={classes.ball}></div>
+            </label>
+            <span>Include Icon</span>
           </div>
         </div>
+        {buttonProps.includeIcon ? (
+          <div className={classes.selectionRow}>
+            <h3>
+              Icons
+              <span>
+                Find material icons here: https://fonts.google.com/icons
+              </span>
+            </h3>
+            <div className={classes.textFieldRow}>
+              <input
+                className={classes.textField}
+                type="text"
+                id="startIcon"
+                value={buttonProps.startIcon}
+                onChange={(e) => onChangeHandler(e, 'startIcon')}
+                placeholder="Start Icon"
+              ></input>
+
+              <input
+                className={classes.textField}
+                type="text"
+                id="endIcon"
+                value={buttonProps.endIcon}
+                onChange={(e) => onChangeHandler(e, 'endIcon')}
+                placeholder="End Icon"
+              ></input>
+            </div>
+          </div>
+        ) : null}
       </form>
-      <div>
+      <div className={classes.buttonDemoContainer}>
+        <span>Your Selection: </span>
         <Button
           color={buttonProps.color}
           size={buttonProps.size}
           variant={buttonProps.variant}
           disableShadow={buttonProps.disableShadow}
           disabled={buttonProps.disabled}
-          startIcon={buttonProps.startIcon}
-          endIcon={buttonProps.endIcon}
+          startIcon={buttonProps.includeIcon ? buttonProps.startIcon : null}
+          endIcon={buttonProps.includeIcon ? buttonProps.endIcon : null}
         />
       </div>
     </div>

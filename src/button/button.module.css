@@ -176,16 +176,22 @@ text:active,
   background: #e0e0e0;
 }
 
-.text:disabled:hover {
-  background-color: white;
-}
-
 .outline:disabled {
   border-color: #9e9e9e;
 }
 
-.outline:hover:disabled {
-  background: #fff;
+.text.default:disabled,
+.text.primary:disabled,
+.text.secondary:disabled,
+.text.danger:disabled {
+  background: #e0e0e0;
+}
+
+.outline.default:disabled,
+.outline.primary:disabled,
+.outline.secondary:disabled,
+.outline.danger:disabled {
+  background: #e0e0e0;
 }
 
 /* Disable shadow */
