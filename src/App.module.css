@@ -20,7 +20,7 @@ h1 {
   margin-right: 80px;
 }
 
-span {
+.description {
   inline-size: max-content;
   margin-bottom: 12px;
   font-size: 12px;

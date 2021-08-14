@@ -12,21 +12,23 @@ function App() {
       <h1>Buttons</h1>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button />'}</span>
+          <span className={classes.description}>{'<Button />'}</span>
           <Button />
         </div>
         <div className={classes.column}>
-          <span>{'&:hover, &:focus'}</span>
+          <span className={classes.description}>{'&:hover, &:focus'}</span>
           <Button customStyles={{ backgroundColor: '#AEAEAE' }} />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button variant="outline" />'}</span>
+          <span className={classes.description}>
+            {'<Button variant="outline" />'}
+          </span>
           <Button color="primary" variant="outline" />
         </div>
         <div className={classes.column}>
-          <span>{'&:hover, &:focus'}</span>
+          <span className={classes.description}>{'&:hover, &:focus'}</span>
           <Button
             color="primary"
             variant="outline"
@@ -36,11 +38,13 @@ function App() {
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button variant="text" />'}</span>
+          <span className={classes.description}>
+            {'<Button variant="text" />'}
+          </span>
           <Button color="primary" variant="text" />
         </div>
         <div className={classes.column}>
-          <span>{'&:hover, &:focus'}</span>
+          <span className={classes.description}>{'&:hover, &:focus'}</span>
           <Button
             color="primary"
             variant="text"
@@ -50,83 +54,99 @@ function App() {
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button disableShadow />'}</span>
+          <span className={classes.description}>
+            {'<Button disableShadow />'}
+          </span>
           <Button disableShadow />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button disabled />'}</span>
+          <span className={classes.description}>{'<Button disabled />'}</span>
           <Button text="Disabled" disabled />
         </div>
         <div className={classes.column}>
-          <span>{'<Button disabled variant="text"/>'}</span>
+          <span className={classes.description}>
+            {'<Button disabled variant="text"/>'}
+          </span>
           <Button text="Disabled" disabled variant="text" />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button startIcon="local_grocery_store" />'}</span>
+          <span className={classes.description}>
+            {'<Button startIcon="local_grocery_store" />'}
+          </span>
           <Button color="primary" startIcon="local_grocery_store" />
         </div>
         <div className={classes.column}>
-          <span>{'<Button endIcon="local_grocery_store" />'}</span>
+          <span className={classes.description}>
+            {'<Button endIcon="local_grocery_store" />'}
+          </span>
           <Button color="primary" endIcon="local_grocery_store" />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button size="sm" />'}</span>
+          <span className={classes.description}>{'<Button size="sm" />'}</span>
           <Button color="primary" size="sm" />
         </div>
         <div className={classes.column}>
-          <span>{'<Button size="md" />'}</span>
+          <span className={classes.description}>{'<Button size="md" />'}</span>
           <Button color="primary" size="md" />
         </div>
         <div className={classes.column}>
-          <span>{'<Button size="lg" />'}</span>
+          <span className={classes.description}>{'<Button size="lg" />'}</span>
           <Button color="primary" size="lg" />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'<Button color="default" />'}</span>
+          <span className={classes.description}>
+            {'<Button color="default" />'}
+          </span>
           <Button />
         </div>
         <div className={classes.column}>
-          <span>{'<Button color="primary" />'}</span>
+          <span className={classes.description}>
+            {'<Button color="primary" />'}
+          </span>
           <Button color="primary" />
         </div>
         <div className={classes.column}>
-          <span>{'<Button color="secondary" />'}</span>
+          <span className={classes.description}>
+            {'<Button color="secondary" />'}
+          </span>
           <Button color="secondary" />
         </div>
         <div className={classes.column}>
-          <span>{'<Button color="danger" />'}</span>
+          <span className={classes.description}>
+            {'<Button color="danger" />'}
+          </span>
           <Button color="danger" />
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.column}>
-          <span>{'&:hover, &:focus'}</span>
+          <span className={classes.description}>{'&:hover, &:focus'}</span>
           <Button customStyles={{ backgroundColor: '#AEAEAE' }} />
         </div>
         <div className={classes.column}>
-          <span></span>
+          <span className={classes.description}></span>
           <Button
             color="primary"
             customStyles={{ backgroundColor: '#0039CB' }}
           />
         </div>
         <div className={classes.column}>
-          <span></span>
+          <span className={classes.description}></span>
           <Button
             color="secondary"
             customStyles={{ backgroundColor: '#455A64' }}
           />
         </div>
         <div className={classes.column}>
-          <span></span>
+          <span className={classes.description}></span>
           <Button
             color="danger"
             customStyles={{ backgroundColor: '#9A0007' }}

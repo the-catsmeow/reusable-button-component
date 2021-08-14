@@ -8,6 +8,8 @@ const ButtonPicker = (props) => {
     variant: 'default',
     disableShadow: false,
     disabled: false,
+    startIcon: '',
+    endIcon: '',
   });
 
   const onChangeHandler = (e, buttonValue) => {
@@ -182,6 +184,29 @@ const ButtonPicker = (props) => {
             <label htmlFor="disabled">Disabled</label>
           </div>
         </div>
+        <div>
+          <h3>Icons</h3>
+          <div>
+            <div>
+              <label htmlFor="startIcon">Start Icon </label>
+              <input
+                type="text"
+                id="startIcon"
+                onChange={(e) => onChangeHandler(e, 'startIcon')}
+              ></input>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label htmlFor="endIcon">End Icon </label>
+              <input
+                type="text"
+                id="endIcon"
+                onChange={(e) => onChangeHandler(e, 'endIcon')}
+              ></input>
+            </div>
+          </div>
+        </div>
       </form>
       <div>
         <Button
@@ -190,6 +215,8 @@ const ButtonPicker = (props) => {
           variant={buttonProps.variant}
           disableShadow={buttonProps.disableShadow}
           disabled={buttonProps.disabled}
+          startIcon={buttonProps.startIcon}
+          endIcon={buttonProps.endIcon}
         />
       </div>
     </div>

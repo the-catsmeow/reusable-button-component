@@ -110,9 +110,27 @@ text:active,
   color: #3f3f3f;
 }
 
+.text.default:hover,
+.text.default:active,
+.text.default:focus,
+.outline.default:hover,
+.outline.default:active,
+.outline.default:focus {
+  background: rgba(93, 95, 100, 0.1);
+}
+
 .outline.primary {
   border: 1px solid #3d5afe;
   color: #3d5afe;
+}
+
+.text.primary:hover,
+.text.primary:active,
+.text.primary:focus,
+.outline.primary:hover,
+.outline.primary:active,
+.outline.primary:focus {
+  background: rgba(41, 98, 255, 0.1);
 }
 
 .outline.secondary {
@@ -120,16 +138,27 @@ text:active,
   color: #455a64;
 }
 
+.text.secondary:hover,
+.text.secondary:active,
+.text.secondary:focus,
+.outline.secondary:hover,
+.outline.secondary:active,
+.outline.secondary:focus {
+  background: rgba(165, 175, 204, 0.1);
+}
+
 .outline.danger {
   border: 1px solid #d32f2f;
   color: #d32f2f;
 }
 
-.outline:hover,
-.outline:active,
-.outline:focus {
-  background: rgba(41, 98, 255, 0.1);
-  border: 1px solid #3d5afe;
+.text.danger:hover,
+.text.danger:active,
+.text.danger:focus,
+.outline.danger:hover,
+.outline.danger:active,
+.outline.danger:focus {
+  background: rgba(228, 95, 95, 0.1);
 }
 
 .text:disabled,
@@ -177,4 +206,11 @@ text:active,
 
 .large {
   padding: 11px 22px;
+}
+
+.matIcon {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './button.module.css';
-import icon from './icons/outline_local_grocery_store_white_24dp.png';
 
 const Button = (props) => {
   const {
@@ -66,19 +65,21 @@ const Button = (props) => {
       style={customStyles}
     >
       {startIcon ? (
-        <img
-          style={{ height: '16px', width: '16px', marginRight: '8px' }}
-          src={icon}
-          alt=""
-        />
+        <span
+          style={{ marginRight: '8px' }}
+          className={`material-icons ${classes.matIcon}`}
+        >
+          {startIcon}
+        </span>
       ) : null}
       {text ? text : 'Default'}
       {endIcon ? (
-        <img
-          style={{ height: '16px', width: '16px', marginLeft: '8px' }}
-          src={icon}
-          alt=""
-        />
+        <span
+          style={{ marginLeft: '8px' }}
+          className={`material-icons ${classes.matIcon}`}
+        >
+          {endIcon}
+        </span>
       ) : null}
     </button>
   );
