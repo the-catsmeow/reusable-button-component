@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Button from '../button/button';
+import reactElementToJSXString from 'react-element-to-jsx-string';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import classes from './button-picker.module.css';
 
@@ -14,6 +17,18 @@ const ButtonPicker = () => {
     startIcon: '',
     endIcon: '',
   });
+
+  const code = reactElementToJSXString(
+    <Button
+      color={buttonProps.color}
+      size={buttonProps.size}
+      variant={buttonProps.variant}
+      disableShadow={buttonProps.disableShadow}
+      disabled={buttonProps.disabled}
+      startIcon={buttonProps.includeIcon ? buttonProps.startIcon : false}
+      endIcon={buttonProps.includeIcon ? buttonProps.endIcon : false}
+    />
+  );
 
   const onChangeHandler = (e, buttonValue) => {
     let updatedButtonProps = { ...buttonProps };
@@ -39,7 +54,7 @@ const ButtonPicker = () => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <form>
         <div className={classes.selectionRow}>
           <h3>Color</h3>
@@ -244,17 +259,30 @@ const ButtonPicker = () => {
           </div>
         ) : null}
       </form>
-      <div className={classes.buttonDemoContainer}>
-        <span>Your Selection: </span>
-        <Button
-          color={buttonProps.color}
-          size={buttonProps.size}
-          variant={buttonProps.variant}
-          disableShadow={buttonProps.disableShadow}
-          disabled={buttonProps.disabled}
-          startIcon={buttonProps.includeIcon ? buttonProps.startIcon : null}
-          endIcon={buttonProps.includeIcon ? buttonProps.endIcon : null}
-        />
+      <div className={classes.demoContainer}>
+        <div className={classes.buttonDemoContainer}>
+          <span>Preview Button: </span>
+          <Button
+            color={buttonProps.color}
+            size={buttonProps.size}
+            variant={buttonProps.variant}
+            disableShadow={buttonProps.disableShadow}
+            disabled={buttonProps.disabled}
+            startIcon={buttonProps.includeIcon ? buttonProps.startIcon : false}
+            endIcon={buttonProps.includeIcon ? buttonProps.endIcon : false}
+          />
+        </div>
+        <SyntaxHighlighter
+          language="javascript"
+          style={a11yLight}
+          customStyle={{
+            width: '80%',
+            borderRadius: '4px',
+            backgroundColor: 'rgba(41, 98, 255, 0.2)',
+          }}
+        >
+          {code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );

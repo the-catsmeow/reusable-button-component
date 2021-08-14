@@ -9,7 +9,7 @@ function App() {
     <div className={classes.App}>
       <h1>Pick a Button</h1>
       <ButtonPicker />
-      <h1>Buttons</h1>
+      <h1>Button Design Guide</h1>
       <div className={classes.row}>
         <div className={classes.column}>
           <span className={classes.description}>{'<Button />'}</span>
