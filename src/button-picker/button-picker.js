@@ -27,10 +27,13 @@ const ButtonPicker = () => {
       disabled={buttonProps.disabled}
       startIcon={buttonProps.includeIcon ? buttonProps.startIcon : false}
       endIcon={buttonProps.includeIcon ? buttonProps.endIcon : false}
-    />
+    />,
+    {
+      displayName: () => {
+        return 'Button';
+      },
+    }
   );
-
-  console.log(code);
 
   const onChangeHandler = (e, buttonValue) => {
     let updatedButtonProps = { ...buttonProps };
