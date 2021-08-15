@@ -30,6 +30,8 @@ const ButtonPicker = () => {
     />
   );
 
+  console.log(code);
+
   const onChangeHandler = (e, buttonValue) => {
     let updatedButtonProps = { ...buttonProps };
     if (
@@ -273,6 +275,7 @@ const ButtonPicker = () => {
           />
         </div>
         <SyntaxHighlighter
+          children={code}
           language="javascript"
           style={a11yLight}
           customStyle={{
@@ -280,9 +283,7 @@ const ButtonPicker = () => {
             borderRadius: '4px',
             backgroundColor: 'rgba(41, 98, 255, 0.2)',
           }}
-        >
-          {code}
-        </SyntaxHighlighter>
+        />
       </div>
     </div>
   );
